@@ -8,5 +8,18 @@
 
 from random import randint # необходимая библиотека
 
-bush = list(randint(1, 5) for i in range(int(input('Пожалуйста, введите кол-во кустов: '))))
-print(bush)
+bushes = list(randint(1, 5) for i in range(int(input('Пожалуйста, введите кол-во кустов: '))))
+print(bushes)
+
+a = int(input('Пожалуйста, введите номер куста: '))
+
+result = 0
+
+if a == 1:
+    result = bushes[0] + bushes[1] + bushes[-1]
+elif a == len(bushes):
+    result = bushes[-2] + bushes[-1] + bushes[0]
+else:
+    result = bushes[a-1] + bushes[a-2] + bushes[a]
+    
+print(result, 'ягод черники')
